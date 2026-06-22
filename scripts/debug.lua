@@ -85,9 +85,23 @@ local bec = Instance.new("UICorner")
 bec.CornerRadius = UDim.new(0, 5)
 bec.Parent = btnExp
 
+local btnCopy = Instance.new("TextButton")
+btnCopy.Size = UDim2.new(0, 60, 0, 28)
+btnCopy.Position = UDim2.new(0, 244, 1, -34)
+btnCopy.BackgroundColor3 = Color3.fromRGB(50, 80, 150)
+btnCopy.BorderSizePixel = 0
+btnCopy.Text = "📋 Copiar"
+btnCopy.TextColor3 = Color3.fromRGB(255, 255, 255)
+btnCopy.TextSize = 10
+btnCopy.Font = Enum.Font.GothamSemibold
+btnCopy.Parent = frame
+local bcp = Instance.new("UICorner")
+bcp.CornerRadius = UDim.new(0, 5)
+bcp.Parent = btnCopy
+
 local btnClear = Instance.new("TextButton")
 btnClear.Size = UDim2.new(0, 60, 0, 28)
-btnClear.Position = UDim2.new(0, 244, 1, -34)
+btnClear.Position = UDim2.new(0, 310, 1, -34)
 btnClear.BackgroundColor3 = Color3.fromRGB(50, 50, 70)
 btnClear.BorderSizePixel = 0
 btnClear.Text = "Limpar"
@@ -259,6 +273,17 @@ end
 
 btnScan.MouseButton1Click:Connect(scanProducts)
 btnExp.MouseButton1Click:Connect(exploreGame)
+btnCopy.MouseButton1Click:Connect(function()
+  local lines = {}
+  for _, c in ipairs(logBox:GetChildren()) do
+    if c:IsA("TextLabel") and c.Text and c.Text ~= "" then
+      table.insert(lines, c.Text)
+    end
+  end
+  local full = table.concat(lines, "\n")
+  setclipboard(full)
+  log("✅ Copiado para área de transferência!", Color3.fromRGB(100, 255, 100))
+end)
 btnClear.MouseButton1Click:Connect(function()
   for _, c in ipairs(logBox:GetChildren()) do
     if c ~= logLayout then c:Destroy() end
