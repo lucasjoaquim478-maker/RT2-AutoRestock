@@ -33,7 +33,7 @@ fc.Parent = frame
 local title = Instance.new("TextLabel")
 title.Size = UDim2.new(1, -16, 0, 30)
 title.Position = UDim2.new(0, 8, 0, 4)
-title.BackgroundTransparent = true
+title.BackgroundTransparency = 1
 title.Text = "🔍 RT2 Debug Scanner"
 title.TextColor3 = Color3.fromRGB(200, 200, 220)
 title.TextSize = 14
@@ -102,7 +102,7 @@ blc.Parent = btnClear
 local function log(msg, color)
   local l = Instance.new("TextLabel")
   l.Size = UDim2.new(1, -8, 0, 16)
-  l.BackgroundTransparent = true
+  l.BackgroundTransparency = 1
   l.Text = msg
   l.TextColor3 = color or Color3.fromRGB(180, 180, 200)
   l.TextSize = 10
