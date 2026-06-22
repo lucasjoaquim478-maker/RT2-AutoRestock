@@ -1,36 +1,47 @@
-# Retail Tycoon 2 - Auto Restock Bot
+# Retail Tycoon 2 - Auto Stock Manager v2
 
-Bot para **Retail Tycoon 2** que gerencia sua loja automaticamente: detecta produtos acabando e faz reabastecimento.
+Bot de auto-restock profissional para **Retail Tycoon 2** com UI moderna.
 
 ## Como usar
 
+```lua
+loadstring(game:HttpGet("https://raw.githubusercontent.com/lucasjoaquim478-maker/RT2-AutoRestock/main/scripts/main.lua"))()
+```
+
 1. Abra o Roblox e entre no **Retail Tycoon 2**
-2. Abra seu executor (Madium)
-3. Copie o conteúdo de `scripts/main.lua`
-4. Cole e execute
-5. Configure os produtos e quantidades mínimas na UI que aparecer
+2. Abra seu executor (Madium, Solara, Xeno, etc.)
+3. Copie e execute o comando acima
+4. Pressione **F6** para mostrar/esconder a UI
+5. Clique em **Escanear** para detectar sua loja
+6. Ajuste os valores mínimos por produto
+7. Clique em **Iniciar** para ativar o auto-restock
 
 ## Funcionalidades
 
-- **Scan automático** — detecta todos os produtos nas prateleiras
-- **Auto Restock** — reabastece quando estoque fica abaixo do mínimo
-- **UI configurável** — ajusta quantidade mínima por produto
-- **Whitelist/Blacklist** — ativa/desativa restock por produto
-- **Logs** — mostra o que está sendo reabastecido
+- **Scan inteligente** — detecta produtos nas prateleiras via múltiplos métodos
+- **Auto Restock** — reabastece automaticamente quando estoque fica abaixo do mínimo
+- **UI profissional** — tema escuro, barras de progresso, stats em tempo real
+- **Configuração individual** — ajusta mínimo e quantidade de restock por produto
+- **Filtro de busca** — encontra produtos pelo nome
+- **Desativação individual** — botão liga/desliga por produto
+- **Suporte a múltiplas lojas/plots**
+- **Detecção automática de RemoteEvents**
 
-## Estrutura
+## Notas
 
-```
-scripts/
-  main.lua    Script principal (copiar e colar no executor)
-```
+O script tenta automaticamente detectar os RemoteEvents usados pelo jogo para comprar/reabastecer. Se não funcionar, verifique o console do executor (F9) — o script lista lá os remotes encontrados.
 
-## Ajustes
+## Produtos do Retail Tycoon 2
 
-Se o script não detectar os produtos ou o restock não funcionar, pode ser necessário ajustar:
+O jogo possui 50+ categorias de produtos incluindo:
+Brinquedos, Roupas, Sapatos, Eletrônicos, Móveis, Comidas, Pets, Automotivo, Militares e mais.
 
-1. O nome dos objetos das prateleiras no jogo
-2. O RemoteEvent usado para comprar/reabastecer
-3. O caminho dos dados do jogador
+## Controles
 
-Abra o `main.lua` e procure por `-- AJUSTE:` para ver os pontos que podem precisar de adaptação.
+| Tecla | Ação |
+|-------|------|
+| F6 | Mostrar/Esconder UI |
+
+## Suporte
+
+Sinta-se à vontade para abrir issues no GitHub reportando problemas ou sugerindo melhorias.
